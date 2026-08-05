@@ -30,7 +30,7 @@ export type ImageCategory =
 const photoMap: Record<ImageCategory, string> = {
   hub: '8082/port-logistics-cargo-container-shipping', // pexels photo 8082 style id
   port: '2387873',
-  warehouse: '4488636',
+  warehouse: '/images/WhatsApp_Image_2026-08-05_at_11.59.58_AM.jpeg',
   airfreight: '2026324',
   seafreight: '2387873',
   landfreight: '93398',
@@ -44,8 +44,9 @@ const photoMap: Record<ImageCategory, string> = {
   global: '20787',
 };
 
-function pexelsUrl(id: string, w = 800): string {
-  return `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+function resolveSrc(value: string, w = 800): string {
+  if (value.startsWith('/')) return value;
+  return `https://images.pexels.com/photos/${value}/pexels-photo-${value}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
 }
 
 export default function PlaceholderImage({
@@ -56,7 +57,7 @@ export default function PlaceholderImage({
   aspect = 'aspect-[4/3]',
 }: PlaceholderImageProps) {
   const [errored, setErrored] = useState(false);
-  const src = pexelsUrl(photoMap[category] ?? photoMap.hub);
+  const src = resolveSrc(photoMap[category] ?? photoMap.hub);
 
   if (errored) {
     return (
