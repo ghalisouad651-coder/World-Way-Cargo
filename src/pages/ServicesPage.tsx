@@ -159,7 +159,7 @@ export default function ServicesPage({ onNavigate }: ServicesPageProps) {
                 ))}
               </div>
             </div>
-            <PlaceholderImage category="electronics" alt="Electronics and accessories" rounded="rounded-3xl" />
+            <img src="/images/WhatsApp_Image_2026-08-05_at_11.59.58_AM copy.jpeg" alt="Global sourcing port operations" className="w-full object-cover rounded-3xl" />
           </div>
         </div>
       </section>
