@@ -27,7 +27,6 @@ export default function HomePage({ onNavigate }: HomePageProps) {
   const hubImages: { category: ImageCategory; alt: string }[] = [
     { category: 'hub', alt: 'Modern logistics hub' },
     { category: 'warehouse', alt: 'Automated warehouse facility' },
-    { category: 'port', alt: 'International shipping port' },
     { category: 'airfreight', alt: 'Air cargo loading' },
   ];
 
